@@ -5,17 +5,17 @@ No ano passado, a SAP lançou o SAP Build para capacitar especialistas de negóc
 
 <p align="center"><img src="./assets/images/img-build-code-architecture.png" width="100%" /></p>
 
-**SAP Build Code** unifies essential application development tools such as SAP Business Application Studio, SAP Cloud Application Programming Model (CAP), SAPUI5, SAP Mobile Services, and SAP Document Management Services. It is powered by the generative AI copilot, Joule, and enables interoperability with ABAP Cloud. Additionally, it facilitates seamless collaboration with SAP Build's low-code solutions and provides robust governance and lifecycle management features.
+O **SAP Build Code** unifica ferramentas essenciais de desenvolvimento de aplicativos, como SAP Business Application Studio, SAP Cloud Application Programming Model (CAP), SAPUI5, SAP Mobile Services e SAP Document Management Services. Ele é alimentado pelo copiloto generativo de IA, Joule, e permite interoperabilidade com ABAP Cloud. Além disso, facilita a colaboração perfeita com as soluções de “low-code” do SAP Build e fornece recursos robustos de governança e gerenciamento do ciclo de vida.
 
 <p align="center"><img src="./assets/images/img-build-code-benefits.png" width="100%" /></p>
 
-This hands-on exercise will assist you in learning how to **build mobile applications using SAP Build Code**.
+Este exercício prático ajudará você a aprender como **construir aplicativos móveis usando SAP Build Code**.
 
-## Description
-Accelerate development by using **SAP Build Code** to consume a SAP Cloud Application Programming (CAP) Model service for mobile development. Build a native, cross-platform mobile application using mobile development kit and bring all of your work together on the SAP Mobile Start app - the launchpad for mobile apps from SAP.
+## Descrição
+Acelere o desenvolvimento usando o **SAP Build Code** para consumir um serviço SAP Cloud Application Programming (CAP) Model para desenvolvimento móvel. Crie um aplicativo móvel nativo e multiplataforma usando o kit de desenvolvimento móvel e reúna todo o seu trabalho no aplicativo SAP Mobile Start – a plataforma de lançamento para aplicativos móveis da SAP.
 
-## Requirements
-In order to complete the session exercises below, first complete the [pre-requisites](./exercises/ex0/README.md).
+## Requisitos
+Para concluir os exercícios da sessão abaixo, primeiro preencha os [pre-requisitos](./exercises/ex0/README.md).
 
 ## Use Case
 ACME is a popular electronics company. ACME hires call center support representatives to process and manage customer incidents. A call center support representative (Processor) receives a phone call from an existing customer and creates a new incident on behalf of the customer. ACME employs technicians who use mobile apps to process these incidents.
