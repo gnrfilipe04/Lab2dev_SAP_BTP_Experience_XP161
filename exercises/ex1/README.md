@@ -105,25 +105,25 @@ Agora você implantará as definições de aplicativo no SAP Mobile Services.
 
     ![MDK](images/1.3.5.png)
 
-    > Cancel the certificate selection if you are prompted to do so in the browser.
+    > Cancele a seleção do certificado se for solicitado no navegador.
 
-5. Copy the Temporary Authentication Code.
+5. Copie o código de autenticação temporário.
 
     ![MDK](images/1.3.6.png)
 
-6. Switch back to the SAP Business Application Studio page. Paste the copied code into the field labeled **Enter your SSO Passcode** and then click **Sign In**.
+6. Volte para a página SAP Business Application Studio. Cole o código copiado no campo denominado **Enter your SSO Passcode** e clique em **Enter**.
 
     ![MDK](images/1.3.7.png)
 
-7. You are now signed in to the Cloud Foundry. Set the Cloud Foundry target by choosing the appropriate Organization and space from the dropdown menu and then click on **Apply**. Once the Cloud Foundry target is set, the `Cloud Foundry Sign in` tab will automatically close.
+7. Agora você está conectado ao Cloud Foundry. Defina o destino do Cloud Foundry escolhendo a organização e o espaço apropriados no menu suspenso e clique em **Apply**. Depois que o destino do Cloud Foundry for definido, a guia `Cloud Foundry Sign in` será fechada automaticamente.
 
     ![MDK](images/1.3.8.png)
     
-8. Select deploy target as **Mobile Services**.
+8. Selecione o destino de implantação como **Mobile services**.
 
     ![MDK](images/1.4.23.png) 
 
-9. Select **Standard** Mobile Services Landscape.
+9. Selecione **Standard** no cenário do Mobile Services.
 
     ![MDK](images/1.4.24.png)  
 
