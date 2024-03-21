@@ -1,45 +1,45 @@
-# Exercise 1 - Run the Starting Application on Your Device
+# Exercício 1 – Execute o aplicativo inicial em seu dispositivo
 
-## Estimated time
+## Tempo estimado
 
-:clock4: 10 minutes
+:clock4: 10 minutos
 
-## Objective
+## Objetivo
 
 
-In this exercise, you will run a starting SAP Mobile Development Kit (MDK) application on your device.
+Neste exercício, você executará um aplicativo SAP Mobile Development Kit (MDK) inicial em seu dispositivo.
 
-| Exercise Number | Title |
+| Número do Exercício | Título |
 | --- | --- |
-| [Exercise 1.1](#exercise-11---launch-the-sap-business-application-studio-for-mdk-development) | Launch the SAP Business Application Studio for MDK Development |
-| [Exercise 1.2](#exercise-12---change-the-workspace-to-the-project-explorer) | Change the workspace to the Project Explorer |
-| [Exercise 1.3](#exercise-13---clone-the-mdk-project) | Clone the MDK Project |
-| [Exercise 1.4](#exercise-14---provide-your-assigned-service-worker-id-to-filter-related-incidents) | Provide your assigned Service Worker ID to filter related Incidents |
-| [Exercise 1.5](#exercise-15---deploy-the-application) | Deploy the application |
-| [Exercise 1.6](#exercise-16---display-the-qr-code-for-onboarding-the-mobile-app) | Display the QR code for onboarding the Mobile app |
-| [Exercise 1.7](#exercise-17---run-the-app) | Run the app |
+| [Exercício 1.1](#exercise-11---launch-the-sap-business-application-studio-for-mdk-development) | Lançar o SAP Business Application Studio para desenvolvimento MDK |
+| [Exercício 1.2](#exercise-12---change-the-workspace-to-the-project-explorer) | Mude o espaço de trabalho para o Project Explorer |
+| [Exercício 1.3](#exercise-13---clone-the-mdk-project) | Clone o projeto MDK |
+| [Exercício 1.4](#exercise-14---provide-your-assigned-service-worker-id-to-filter-related-incidents) | Forneça seu ID de Service Worker atribuído para filtrar incidentes relacionados |
+| [Exercício 1.5](#exercise-15---deploy-the-application) | Implantar o aplicativo |
+| [Exercício 1.6](#exercise-16---display-the-qr-code-for-onboarding-the-mobile-app) | Exibir o QR Code para integração do aplicativo móvel |
+| [Exercício 1.7](#exercise-17---run-the-app) | Iniciar a aplicação |
 
-### Exercise 1.1 - Launch the SAP Business Application Studio for MDK Development 
+### Exercício 1.1 - Lançar o SAP Business Application Studio para desenvolvimento MDK 
 
-1. Launch the [SAP Business Application Studio](https://ad162-egls99xc.eu10cf.applicationstudio.cloud.sap/index.html) in the Google Chrome browser.
+1. Inicie o [SAP Business Application Studio](https://ad162-egls99xc.eu10cf.applicationstudio.cloud.sap/index.html) no seu browser Google Chrome.
 
-    >Cancel the selection of the user certificate if a prompt appears in the browser.
+    >Cancele a seleção do certificado do usuário se um prompt aparecer no navegador.
 
-2. Provide the login credentials that were shared with you during the session. 
+2. Forneça as credenciais de login que foram compartilhadas com você durante a sessão. 
 
     ![MDK](images/1.1.1.png)
 
-3. If your dev space is in `STOPPED` state, start it by clicking on the run icon.
+3. Se o seu espaço de desenvolvimento estiver no estado `STOPPED`, inicie-o clicando no ícone de execução.
 
     ![MDK](images/1.1.2.png)  
 
-    Once it's in the `RUNNING` state, open it by clicking on the name.    
+    Quando estiver no estado `RUNNING`, abra-o clicando no nome.    
 
     ![MDK](images/1.1.3.png) 
 
-### Exercise 1.2 - Change the workspace to the Project Explorer
+### Exercício 1.2 - Mude o espaço de trabalho para o Project Explorer
 
-You will now switch your workspace to the `projects` folder.
+Agora você mudará seu espaço de trabalho para a pasta `projects`.
 
 1. Click on the Explorer icon and select **Open Folder**.
 
