@@ -17,42 +17,42 @@ Acelere o desenvolvimento usando o **SAP Build Code** para consumir um serviço 
 ## Requisitos
 Para concluir os exercícios da sessão abaixo, primeiro preencha os [pre-requisitos](./exercises/ex0/README.md).
 
-## Use Case
-ACME is a popular electronics company. ACME hires call center support representatives to process and manage customer incidents. A call center support representative (Processor) receives a phone call from an existing customer and creates a new incident on behalf of the customer. ACME employs technicians who use mobile apps to process these incidents.
+## Caso de uso
+ACME é uma empresa popular de eletrônicos. A ACME contrata representantes de suporte de call center para processar e gerenciar incidentes de clientes. Um representante de suporte da central de atendimento (Processador) recebe uma chamada telefônica de um cliente existente e cria um novo incidente em nome do cliente. A ACME emprega técnicos que usam aplicativos móveis para processar esses incidentes.
 
-### Incident Creation ([AD161](https://github.com/SAP-samples/teched2023-AD161))
-- Mary reports an issue she is facing with her ACME electronic device.
-- Raj, a support representative, logs the incident using the Incident Management app.
-- Raj records Mary's contact information and issue details.
+### Criação do Incidente ([AD161](https://github.com/SAP-samples/teched2023-AD161))
+- Mary relata um problema que está enfrentando com seu dispositivo eletrônico ACME.
+- Raj, um representante de suporte, registra o incidente usando o aplicativo Incident Management.
+- Raj registra as informações de contato e detalhes do problema de Mary.
 
-### Incident Resolution (AD162 - This Hands On Session)
-- Anna, a technician, uses the ACME Technician Incident Management app.
-- Anna views the tasks assigned to her.
-- Anna selects a task to view the details.
-- Anna travels to Mary's location for on-site service.
-- After fixing the issue, Anna uploads a resolution image.
-- Anna requests Mary's digital signature for closing the incident.
-- As a traveling technician, Anna accesses payroll and organizational news via the SAP Mobile Start app.
-- She easily launches the Incident Management app from SAP Mobile Start.
+### Resolução do Incidente (AD162 - This Hands On Session)
+- Anna, uma técnica, usa o aplicativo ACME Technician Incident Management.
+- Anna visualiza as tarefas atribuídas a ela.
+- Anna seleciona uma tarefa para ver os detalhes.
+- Anna viaja até a casa de Mary para atendimento no local.
+- Depois de corrigir o problema, Anna carrega uma imagem de resolução.
+- Anna solicita a assinatura digital de Mary para encerrar o incidente.
+- Como técnica itinerante, Anna acessa notícias organizacionais e de folha de pagamento por meio do aplicativo SAP Mobile Start.
+- Ela inicia facilmente o aplicativo Incident Management no SAP Mobile Start.
 
-## Understand your SAP Cloud Application Programming Backend
-The back-end for this Hands-On session (AD162) has been created using SAP Cloud Application Programming Model, which in turn connects to a HANA DB. Three entities are defined in the `schema.cds` file and then exposed as a service.
+## Entenda seu back-end de programação de aplicativos SAP Cloud
+O back-end para esta sessão prática (AD162) foi criado usando o SAP Cloud Application Programming Model, que por sua vez se conecta a um banco de dados HANA. Três entidades são definidas no arquivo `schema.cds` e depois expostas como um serviço.
   
 ![LCAP View of the Back-End](./assets/images/img-2.png)
 
-This session will focus on building a mobile application using a SAP Cloud Application Programming back-end. To learn more about how to build a back-end using SAP Cloud Application Programming Model (CAP), please check out the [session AD161](https://github.com/SAP-samples/teched2023-AD161).
+Esta sessão se concentrará na construção de um aplicativo móvel usando um back-end SAP Cloud Application Programming. Para saber mais sobre como construir um back-end usando SAP Cloud Application Programming Model (CAP), confira a sessão [session AD161](https://github.com/SAP-samples/teched2023-AD161).
 
-## Exercises
-| Exercise Number | Title | Estimated Time (mins) |
+## Exercícios
+| Número do exercício | Título | Tempo estimado (mins) |
 | ---- | ---- | --- |
-| [Exercise 1](./exercises/ex1/README.md) | Run the Starting Application on Your Device | 10 |
-| [Exercise 2](./exercises/ex2/README.md) | Enhance the generated Incidents List and Detail page | 20 |
-| [Exercise 3](./exercises/ex3/README.md) | Modify an Incident Record | 40 |
-| [Exercise 4](./exercises/ex4/README.md) | Integrate with SAP Mobile Start | 10 |
+| [Exercício 1](./exercises/ex1/README.md) | Execute o aplicativo inicialmente em seu dispositivo | 10 |
+| [Exercício 2](./exercises/ex2/README.md) | Aprimore a lista de incidentes gerada e a página de detalhes | 20 |
+| [Exercício 3](./exercises/ex3/README.md) | Modificar um registro de incidente | 40 |
+| [Exercício 4](./exercises/ex4/README.md) | Integre com SAP Mobile Start | 10 |
 
 
-## How to obtain support
-Support for the content in this repository is available during the actual time of the online session for which this content has been designed. Otherwise, you may request support via the [Issues](../../issues) tab.
+## Como obter suporte
+O suporte para o conteúdo deste repositório está disponível durante a sessão online para a qual este conteúdo foi projetado. Caso contrário, você poderá solicitar suporte por meio da guia [Problemas](../../issues).
 
 ## Additional Support and Learning Resources
 - Continue your learning with additional [MDK tutorials](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/overview.html#tutorials)
