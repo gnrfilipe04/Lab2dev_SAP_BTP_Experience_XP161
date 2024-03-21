@@ -127,32 +127,32 @@ Agora você implantará as definições de aplicativo no SAP Mobile Services.
 
     ![MDK](images/1.4.24.png)  
 
-10. Select the Mobile Services App ID `sap.mobile.user.xyz` assigned to you.
+10. Selecione o ID do aplicativo de serviços móveis `sap.mobile.user.xyz` atribuído a você.
 
     ![MDK](images/1.4.25.png) 
 
-11. If you want to enable source for debugging the deployed bundle, then choose **Yes**.
+11. Se você quiser habilitar a origem para depuração do pacote implantado, escolha **Yes**.
 
     ![MDK](images/1.4.26.png) 
 
-    You should see **Deploy to Mobile Services successfully!** message.
+    Você deverá ver a mensagem **Deploy to Mobile Services successfully!**.
 
     ![MDK](images/1.4.27.png) 
 
-### Exercise 1.6 - Display the QR code for onboarding the Mobile app
+### Exercício 1.6 - Exibir o QR Code para integração do aplicativo móvel
 
-You will now run the initial application on the Mobile client installed on your device by scanning the on-boarding QR code. 
+Agora você executará o aplicativo inicial no cliente móvel instalado em seu dispositivo, digitalizando o QR Code integrado. 
 
-1. Expand the `MDKApp` project, click the `Application.app` to open it in MDK Application Editor and then click the **Application QR Code** icon.
+1. Expanda o projeto `MDKApp`, clique em `Application.app` para abri-lo no MDK Application Editor e clique no ícone **Application QR Code**.
 
     ![MDK](images/1.3.1.png)
 
 
-2. The Onboarding QR code is now displayed. Leave the Onboarding dialog box open as you proceed to the next step.
+2. O QR Code de integração agora é exibido. Deixe a caixa de diálogo Integração aberta enquanto avança para a próxima etapa.
 
     ![MDK](images/1.3.9.png)
 
-### Exercise 1.7 - Run the app
+### Exercício 1.7 - Execute o aplicativo
 
 | Steps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Android | iOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |
 | --- | --- | --- |
