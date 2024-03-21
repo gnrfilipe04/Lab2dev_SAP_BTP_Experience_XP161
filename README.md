@@ -1,7 +1,7 @@
-# AD162 - Develop Mobile Apps with SAP Build Code, Access them via SAP Mobile Start
+# AD162 - Desenvolva aplicativos móveis com SAP Build Code e acesse-os via SAP Mobile Start
 
 ## SAP Build Code
-Last year, SAP launched SAP Build to empower business experts to construct applications, implement automations and compose business sites. This year, the Build family is being expanded to offer a powerful shortcut for cloud application development with the introduction of **SAP Build Code**.
+No ano passado, a SAP lançou o SAP Build para capacitar especialistas de negócios para construir aplicações, implementar automações e compor sites de negócios. Este ano, a família Build está sendo expandida para oferecer um atalho poderoso para o desenvolvimento de aplicações em nuvem com a introdução do **SAP Build Code**.
 
 <p align="center"><img src="./assets/images/img-build-code-architecture.png" width="100%" /></p>
 
