@@ -55,11 +55,11 @@ Esta sessão se concentrará na construção de um aplicativo móvel usando um b
 O suporte para o conteúdo deste repositório está disponível durante a sessão online para a qual este conteúdo foi projetado. Caso contrário, você poderá solicitar suporte por meio da guia [Problemas](../../issues).
 
 ## Suporte Adicional e Recursos de Aprendizagem
-- tinue seu aprendizado com tutoriais adicionais do [MDK tutorial](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/overview.html#tutorials)
+- Continue seu aprendizado com tutoriais adicionais do [MDK tutorial](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/overview.html#tutorials)
 
 - Confira a Comunidade SAP para [Desenvolvimento mobile](https://community.sap.com/topics/mobile-technology) & [Experiência móvel](https://community.sap.com/topics/mobile-experience)
 
-- Saiba mais sobre o SAP Cloud Application Programming Model [visite a documentação oficial](https://cap.cloud.sap/docs/) and [com estes recursos adicionais](https://cap.cloud.sap/docs/resources/)
+- Saiba mais sobre o SAP Cloud Application Programming Model [visite a documentação oficial](https://cap.cloud.sap/docs/) e [com estes recursos adicionais](https://cap.cloud.sap/docs/resources/)
 
 ## Licença
 Copyright (c) 2023 SAP SE ou empresa afiliada da SAP. Todos os direitos reservados. Este projeto está licenciado sob a Licença de Software Apache, versão 2.0, exceto quando indicado de outra forma no arquivo [LICENÇA](LICENSES/Apache-2.0.txt).
