@@ -85,23 +85,23 @@ Antes de iniciar os exercícios da sessão, você primeiro clonará o repositór
 
     ![MDK](images/1.3.11.png)  
 
-### Exercise 1.5 - Deploy the application
+### Exercício 1.5 - Implantar o aplicativo
 
-You will now deploy the application definitions to SAP Mobile Services.
+Agora você implantará as definições de aplicativo no SAP Mobile Services.
 
-1. Right-click `Application.app` and select **MDK: Deploy**.
+1. Clique com o botão direito em `Application.app` e selecione **MDK: Deploy**.
 
     ![MDK](images/1.4.22.png) 
 
-2. If you don't have an active CF session, you may be prompted to log into Cloud Foundry. If prompted, click **Login** to continue. If not, proceed directly to step 8.
+2. Se você não tiver uma sessão CF ativa, poderá ser solicitado que você faça login no Cloud Foundry. Se solicitado, clique em **Login** para continuar. Caso contrário, prossiga diretamente para a etapa 8.
 
     ![MDK](images/1.3.3.png)
 
-3. Choose the **SSO Passcode** as your authentication method, then click on the highlighted hyperlink. This will open a new browser page.
+3. Escolha **Senha SSO** como seu método de autenticação e clique no hiperlink destacado. Isso abrirá uma nova página do navegador.
 
     ![MDK](images/1.3.4.png)
 
-4. A new tab will open in your browser. Enter  `tdct3ched1-platform` as the origin key for the custom IdP, then click on **Sign in with alternative identity provider**.
+4. Uma nova aba será aberta no seu navegador. Insira `tdct3ched1-platform` como a chave de origem para o IdP personalizado e clique em **Sign in with alternative identity provider**.
 
     ![MDK](images/1.3.5.png)
 
