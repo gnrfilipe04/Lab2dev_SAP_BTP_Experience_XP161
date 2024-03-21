@@ -41,47 +41,47 @@ Neste exercício, você executará um aplicativo SAP Mobile Development Kit (MDK
 
 Agora você mudará seu espaço de trabalho para a pasta `projects`.
 
-1. Click on the Explorer icon and select **Open Folder**.
+1. Clique no ícone do Explorer e selecione **Open folder**.
 
     ![MDK](images/1.2.1.png) 
 
-2. If not already selected, choose the `projects` folder and click **OK**.
+2. Se ainda não estiver selecionado, escolha a pasta `projects` e clique em **OK**.
 
     ![MDK](images/1.2.2.png) 
 
-    The SAP Business Application Studio page will reload, and the projects folder will now open as the workspace.
+    A página do SAP Business Application Studio será recarregada e a pasta de projetos será aberta como espaço de trabalho.
 
     ![MDK](images/1.2.3.png)      
 
-### Exercise 1.3 - Clone the MDK Project
+### Exercício 1.3 - Clone o projeto MDK
 
-Before starting on the session exercises, you will first clone the a git repository into the Business Application Studio workspace.
+Antes de iniciar os exercícios da sessão, você primeiro clonará o repositório git na área de trabalho do Business Application Studio.
 
-1. Copy the below URL.
+1. Copie o URL abaixo.
 
     ```URL
     https://github.com/jitendrakansal/MDKApp.git
     ```
 
-2. On the `Get Started` page, click `Clone from Git`.
+2. Na página `Get Started`, clique em `Clone from Git`.
 
     ![MDK](images/1.3.12.png) 
 
-3. In the `Provide repository URL` field, paste the URL and press **Enter**.
+3. No campo `Provide repository URL`, cole o URL e pressione **Enter**.
 
     ![MDK](images/1.3.13.png) 
 
-3. Click on **Cancel**. The cloned repository will be added to project explorer.
+4. Clique em **Cancel**. O repositório clonado será adicionado ao explorador de projetos.
 
     ![MDK](images/1.3.14.png)  
 
-### Exercise 1.4 - Provide your assigned Service Worker ID to filter related Incidents
+### Exercício 1.4 - Forneça seu ID de Service Worker atribuído para filtrar incidentes relacionados
 
-1. Expand the `MDKApp` project and navigate to `Pages` &rarr; `Incident`. Right-click on the `Incident_List.page` and open with **Text Editor**.
+1. Expanda o projeto `MDKApp` e navegue até `Pages` &rarr; `Incident`. Clique com o botão direito em `Incident_List.page` e abra com **Text Editor**.
 
     ![MDK](images/1.3.10.gif)   
 
-2. Replace the `workerID` with a Service Worker ID value shared with you and then close the page by clicking the `x` sign.
+2. Substitua `workerID` por um valor de ID do Service Worker compartilhado com você e feche a página clicando no sinal `x`.
 
     ![MDK](images/1.3.11.png)  
 
