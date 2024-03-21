@@ -173,14 +173,14 @@ Agora você executará o aplicativo inicial no cliente móvel instalado em seu d
 
 
 
->After scanning and onboarding using the URL, it will be remembered. If you log out and onboard again, you'll be prompted to either continue using the current application or to scan a new QR code.
+>Após a digitalização e integração usando o URL, ele será lembrado. Se você sair e entrar novamente, será solicitado a continuar usando o aplicativo atual ou a escanear um novo código QR.
 
-## Summary
+## Sumário
 
-You now have the starting application running in your MDK client.
+Agora você tem o aplicativo inicial em execução no cliente MDK.
 
-## Navigation
+## Navegação
 
-|  Next |
+|  Próximo |
 |---|
-| [Exercise 2](../ex2/README.md) |
+| [Exercício 2](../ex2/README.md) |
