@@ -156,8 +156,8 @@ Agora você executará o aplicativo inicial no cliente móvel instalado em seu d
 
 | Steps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Android | iOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  |
 | --- | --- | --- |
-| 1. Launch **`Mobile Svcs`** app on your mobile device. Tap **Agree** on `End User License Agreement and Privacy Statement`. | ![MDK](images/1.4.1.png) | ![MDK](images/1.4.2.png) |
-| 2. Tap **Scan** to start the device camera for scanning the onboarding QR code and grant permission to access the camera. Please note, if you already have the MDK client on-boarded, tap *Get Started* and *Scan new QR code* to continue. | ![MDK](images/1.4.3.png) | ![MDK](images/1.4.4.png) |
+| 1. Inicie o aplicativo **`Mobile Svcs`** em seu dispositivo móvel. Toque em **Agree** em `End User License Agreement and Privacy Statement`. | ![MDK](images/1.4.1.png) | ![MDK](images/1.4.2.png) |
+| 2. Toque em **Scan** para iniciar a câmera do dispositivo para digitalizar o código QR integrado e conceder permissão para acessar a câmera. Observe que se você já possui o cliente MDK integrado, toque em *Get Started* e *Scan new QR Code* para continuar. | ![MDK](images/1.4.3.png) | ![MDK](images/1.4.4.png) |
 | 3. Once the scan succeeds, tap **Continue**. | ![MDK](images/1.4.5.png) | ![MDK](images/1.4.6.png) |
 | 4. Use the login credentials that were shared with you during the session to log into SAP BTP. | ![MDK](images/1.4.7.png) | ![MDK](images/1.4.8.png) |
 | 5. Create a passcode that is at least 5 characters long to unlock the app, and then tap **Next**. | ![MDK](images/1.4.9.png) | ![MDK](images/1.4.10.png) |
