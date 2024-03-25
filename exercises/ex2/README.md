@@ -93,54 +93,54 @@ Um controle de UI de cabeçalho de perfil fornece informações adicionais e apr
 
     ![MDK](images/2.3.1.png) 
 
-    >The `DesignTimeTarget` property is similar to Target, but is only used for design time. This allows the Object Browser to show a filtered list based on the Design Time Target rather than the full list of all Entities.
+    >A propriedade `DesignTimeTarget` é semelhante ao Target, mas é usada apenas para tempo de design. Isso permite que o Navegador de Objetos mostre uma lista filtrada com base no Design Time Target em vez da lista completa de todas as Entidades.
 
-2. Select the `customer` expand property, you'll notice that the expression value updates accordingly. Click **OK** to close the Query Options Expression Editor. You can now access and bind customer information to any control on the detail page.
+2. Selecione a propriedade de expansão `customer` e você notará que o valor da expressão é atualizado de acordo. Clique em **OK** para fechar o Editor de Expressões de Opções de Consulta. Agora você pode acessar e vincular informações do cliente a qualquer controle na página de detalhes.
 
     ![MDK](images/2.3.2.png) 
 
-3. Click on the highlighted area to access the existing Object Header control.
+3. Clique na área destacada para acessar o controle Object Header existente.
 
     ![MDK](images/2.3.3.png) 
 
-4. Right-click on the Object Header control and **Delete** it.
+4. Clique com o botão direito no controle Object Header e **Delete**.
 
     ![MDK](images/2.3.4.png) 
 
-5. Now, you will add the **Profile Header** control to display information such as name, location, and communication methods with a customer. <br/> In the Layout Editor, expand the **Controls** &rarr; **Static Container** group, then drag and drop the **Profile Header** control onto the top of the page area.
+5. Agora, você adicionará o controle **Profile Header** para exibir informações como nome, localização e métodos de comunicação com um cliente. <br/> No Layout Editor, expanda **Controls** &rarr; **Static Container** e arraste e solte o controle **Profile Header** na parte superior da área da página.
 
     ![MDK](images/2.3.5.gif) 
 
-6. In the **Properties** pane under **Appearance**, clear the default value for the `Description` property. 
+6. No painel **Properties** em **Appearance**, limpe o valor padrão da propriedade `Description`. 
 
-7. For the `DetailImage` property, click on the link icon to open the Object Browser, search for the `customer` SAP icon and double click on it. 
+7. Para a propriedade `DetailImage`, clique no ícone do link para abrir o Object Browser, procure o ícone SAP `customer` e clique duas vezes nele. 
 
     ![MDK](images/2.3.6.gif) 
 
-8. For the `Headline` property, click on the link icon to open the Object Browser and bind to Customer's First and Last names.
+8. Para a propriedade `Headline`, clique no ícone do link para abrir o Navegador de objetos e vincular ao nome e sobrenome do cliente.
 
-     > Ensure that `OData Objects` is selected in the dropdown menu.
+     > Certifique-se de que `OData Objects` esteja selecionado no menu suspenso.
 
-    - In the search field, look for `first`, select `FirstName` and **double-click on it**. The binding `{customer/FirstName}` will be generated in the expression box. **Do not close the Object Browser window**.
-    - Add a space after the generated value.
-    - Look for `last` in the search field, select `LastName` and **click on `Insert`**. You'll notice the binding `{customer/FirstName} {customer/LastName}` generated in the expression box. 
-    - Click **OK** to set the value to the control field.
+    - No campo de pesquisa, procure por `first`, selecione `FirstName` e **clique duas vezes nele**. A ligação `{customer/FirstName}` será gerada na caixa de expressão. **Não feche a janela do Navegador de objetos**.
+    - Adicione um espaço após o valor gerado.
+    - Procure por `last` no campo de pesquisa, selecione `LastName` e **clique em `Insert`**. Você notará a ligação `{customer/FirstName} {customer/LastName}` gerada na caixa de expressão. 
+    - Clique em **OK** para definir o valor para o campo de controle.
 
     ![MDK](images/2.3.7.gif) 
 
-9. Follow similar instructions for the `Subheadline` property, binding it to the customer's city and country values `{customer/AddressCity} {customer/AddressCountry}`. 
+9. Siga instruções semelhantes para a propriedade `Subheadline`, vinculando-a aos valores de cidade e país do cliente `{customer/AddressCountry}`. 
 
     ![MDK](images/2.3.8.gif)  
 
-10. Under the `ActivityItems` section in the Properties pane, click **Add** to create a new activity item.
+10. Na seção `ActivityItems` no painel Propriedades, clique em **Add** para criar um novo item de atividade.
 
     ![MDK](images/2.3.9.png) 
 
-11. Expand the newly added item, then click the three-dot icon for the `ActivityValue` to open the Object Browser. Bind the `Phone` property of the Customer entity.
+11. Expanda o item recém-adicionado e clique no ícone de três pontos de `ActivityValue` para abrir o Navegador de objetos. Vincule a propriedade `Phone` da entidade Cliente.
 
     ![MDK](images/2.3.10.gif) 
 
-12. Add two more activity items in a similar manner for Email and Message, and bind them to the customer's Email and Phone properties.
+12. Adicione mais dois itens de atividade de maneira semelhante para Email e Mensagem e vincule-os às propriedades Email e Telefone do cliente.
 
     ![MDK](images/2.3.11.png) 
 
