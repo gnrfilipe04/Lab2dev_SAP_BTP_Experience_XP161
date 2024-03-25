@@ -144,33 +144,33 @@ Um controle de UI de cabeçalho de perfil fornece informações adicionais e apr
 
     ![MDK](images/2.3.11.png) 
 
-### Exercise 2.4 - Redeploy the application
+### Exercício 2.4 - Reimplantar o aplicativo
 
-Now that you have completed the changes to the Incident List and Detail pages it is time to deploy the changes to see the result.
+Agora que você concluiu as alterações nas páginas Lista de incidentes e Detalhes, é hora de implantar as alterações para ver o resultado.
 
-1. Right-click the `Application.app` file in the project explorer pane, choose `MDK:Deploy` and then select deploy target as **Mobile Services**. When the deployment is successful, a success message will appear. If the deployment gets stuck, reload the page and try again.
+1. Clique com o botão direito no arquivo `Application.app` no painel do explorador de projetos, escolha `MDK:Deploy` e selecione o destino de implementação como **Mobile Services**. Quando a implantação for bem-sucedida, uma mensagem de sucesso aparecerá. Se a implantação travar, recarregue a página e tente novamente.
 
     ![MDK](images/2.4.1.png)
     ![MDK](images/2.4.2.png)
 
-    >Alternatively, you can select `MDK: Redeploy` from the command palette. To access the command palette, go to the View menu and choose Command Palette, or press Command+Shift+P on a Mac or Ctrl+Shift+P on a Windows machine. This command will perform the last deployment.
+    >Alternativamente, você pode selecionar `MDK: Redeploy` na paleta de comandos. Para acessar a paleta de comandos, vá ao menu Exibir e escolha Paleta de Comandos ou pressione Command+Shift+P em um Mac ou Ctrl+Shift+P em uma máquina Windows. Este comando executará a última implantação.
     
     >![MDK](images/2.4.3.png)
 
 
-### Exercise 2.5 - Update the MDK app with new metadata
+### Exercício 2.5 - Atualize o aplicativo MDK com novos metadados
 
 | Steps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Android | iOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |---|---|---|
-| 1. Tap the **Check for Updates** option in the `User menu` on the Incidents page.| ![MDK](images/2.5.1.png)| ![MDK](images/2.5.2.png)|
-| 2. You will see a `New Version Available!` pop-up.  Tap **Now**.| ![MDK](images/2.5.3.png)| ![MDK](images/2.5.4.png)|
-| 3. On the Incident list page, you now see the customer's name and a filter bar for applying quick filters. <br/><br/>- On the Detail page, a profile header will display the customer's details and communication items. This will allow you to email, make a phone call, or send a message to the customer.| ![MDK](images/2.5.5.gif)| ![MDK](images/2.5.6.gif)|
+| 1. Toque na opção **Check for updates** no `User menu` na página Incidentes.| ![MDK](images/2.5.1.png)| ![MDK](images/2.5.2.png)|
+| 2. Você verá um pop-up `New Version Available!`. Toque em **Now**.| ![MDK](images/2.5.3.png)| ![MDK](images/2.5.4.png)|
+| 3. Na página Lista de incidentes, agora você vê o nome do cliente e uma barra de filtros para aplicar filtros rápidos. <br/><br/>- Na página Detalhes, um cabeçalho de perfil exibirá os detalhes do cliente e itens de comunicação. Isso permitirá que você envie um e-mail, faça uma ligação ou envie uma mensagem ao cliente. | ![MDK](images/2.5.5.gif)| ![MDK](images/2.5.6.gif)|
 
 
 
-## Summary
+## Sumário
 
-You've enhanced the incident pages to better suit the technician. They can now easily understand the information and reach out to the customer when needed.
+Você aprimorou as páginas de incidentes para melhor atender o técnico. Agora eles podem compreender facilmente as informações e entrar em contato com o cliente quando necessário.
 
 ## Navigation
 
