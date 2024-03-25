@@ -31,21 +31,21 @@ Como técnico, você pode querer ver quem relatou um incidente sem navegar até 
    
     ![MDK](images/2.1.1.png)
 
-2. The `customer` navigation property has already been defined in the Incidents list page. This information can be found by navigating to `Pages` &rarr; `Incident` &rarr;  `Incident_List.page`. Select the Object Table control to find the  `QueryOptions` property binding.
+2. A propriedade de navegação `customer` já foi definida na página da lista de Incidentes. Esta informação pode ser encontrada navegando até `Pages` &rarr; `Incident` &rarr; `Incident_List.page`. Selecione o controle Object Table para encontrar a ligação da propriedade `QueryOptions`.
 
     ![MDK](images/2.1.2.png)
 
-3. Scroll down through the Object Table properties, then click on the link icon next to the **Footnote** property to open the Object Browser.
-    - Manually type `Reported by` in the Expression field, followed by a space.
-    - In the search field, look for the customer's first name, select `FirstName` and click on `Insert`. The expression box will generate the binding `Reported by {customer/FirstName}` **Don't close the Object Browser window**.
-    - Add a space after the generated value.
-    - Look for the customer's last name in the search field, select `LastName` and click  `Insert`. 
-        > The expression box will generate the binding `Reported by {customer/FirstName} {customer/LastName}`. 
-    - Click **OK** to set this value in the control field.
+3. Role para baixo pelas propriedades da Tabela de objetos e clique no ícone do link próximo à propriedade **Footnote** para abrir o Navegador de objetos.
+    - Digite manualmente `Reported by` no campo Expressão, seguido de um espaço.
+    - No campo de busca, procure pelo nome do cliente, selecione `FirstName` e clique em `Insert`. A caixa de expressão irá gerar a ligação `Reported by {customer/FirstName}` **Don't close the Object Browser window**.
+    - Adicione um espaço após o valor gerado.
+    - Procure o sobrenome do cliente no campo de pesquisa, selecione `LastName` e clique em `Insert`. 
+        > A caixa de expressão irá gerar a ligação `Reported by {customer/FirstName} {customer/LastName}`. 
+    - Clique em **OK** para definir esse valor no campo de controle.
 
     ![MDK](images/2.1.3.gif)
 
-### Exercise 2.2 - Add a Filter Feedback Bar on the Incident List page
+### Exercício 2.2 - Adicionar uma barra de feedback de filtro na página Lista de incidentes
 
 A Filter feedback bar is a horizontal bar that appears above a content list (on a Sectioned Table). It uses interactive chips to indicate which filters have been applied to the list, and enables users to rapidly apply frequently-used filters.
 
