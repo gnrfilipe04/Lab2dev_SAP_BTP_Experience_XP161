@@ -47,23 +47,23 @@ Como técnico, você pode querer ver quem relatou um incidente sem navegar até 
 
 ### Exercício 2.2 - Adicionar uma barra de feedback de filtro na página Lista de incidentes
 
-A Filter feedback bar is a horizontal bar that appears above a content list (on a Sectioned Table). It uses interactive chips to indicate which filters have been applied to the list, and enables users to rapidly apply frequently-used filters.
+Uma barra de feedback do filtro é uma barra horizontal que aparece acima de uma lista de conteúdo (em uma tabela seccionada). Ele usa chips interativos para indicar quais filtros foram aplicados à lista e permite que os usuários apliquem rapidamente os filtros usados ​​com frequência.
 
-1. In the `Incident_List.page`, navigate to the highlighted `Sectioned Table`.
+1. Em `Incident_List.page`, navegue até a `Sectioned Table` destacada.
 
     ![MDK](images/2.2.1.png)
 
-2. In the Property pane, select **Object Collection** for the `FastFilters` property under **FilterFeebackBar** section.
+2. No painel Propriedade, selecione **Object Collection** para a propriedade `FastFilters` na seção **FilterFeebackBar**.
 
     ![MDK](images/2.2.2.png)
 
-3. Click **Add**. You will see an `item0` object generated. Expand it to view its properties.
+3. Clique em **Add**. Você verá um objeto `item0` gerado. Expanda-o para visualizar suas propriedades.
 
     ![MDK](images/2.2.3.png)
 
-4. Fill in the following information:
+4. Preencha as seguintes informações:
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `DisplayValue` | `High Priority` |
     | `FilterType` | Choose `Filter` from the dropdown |
