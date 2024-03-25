@@ -1,33 +1,33 @@
-# Exercise 2 - Enhance the generated Incidents List and Detail page
+# Exercício 2 - Aprimore a lista de incidentes gerada e a página de detalhes
 
-## Estimated time
+## Tempo estimado
 
-:clock4: 20 minutes
+:clock4: 20 minutos
 
-## Objective
+## Objetivo
 
-In this exercise, you'll make a few enhancements to the
-- Incidents list page
-    - First, you'll display the customer's name. 
-    - Then, you'll add a Filter feedback bar that will appear above the Incident List to filter incidents based on certain criteria. 
-- Incident detail page
-    - You'll replace the existing Object Header with a Profile Header. This enhancement will provide additional information and improved access to multiple communication methods with a customer.
+Neste exercício, você fará algumas melhorias no
+- Página da lista de incidentes
+    - Primeiro, você exibirá o nome do cliente. 
+    - Em seguida, você adicionará uma barra de feedback de filtro que aparecerá acima da lista de incidentes para filtrar incidentes com base em determinados critérios. 
+- Página de detalhes do incidente
+    - Você substituirá o cabeçalho de objeto existente por um cabeçalho de perfil. Essa melhoria fornecerá informações adicionais e acesso aprimorado a vários métodos de comunicação com um cliente.
 
-| Exercise Number   | Title                                                 |
+| Número do exercício   | Título                                                 |
 |-------------------|-------------------------------------------------------|
-| [Exercise 2.1](#exercise-21---display-customer-name-on-the-incident-list-page)      | Display Customer Name on the Incident List page  |
-| [Exercise 2.2](#exercise-22---add-a-filter-feedback-bar-on-the-incident-list-page)      | Add a Filter Feedback Bar on the Incident List page  |
-| [Exercise 2.3](#exercise-23---replace-the-existing-object-header-with-profile-header-ui-control)      | Replace the existing Object Header with Profile Header UI control  |
-| [Exercise 2.4](#exercise-24---redeploy-the-application)      | Redeploy the application  |
-| [Exercise 2.5](#exercise-25---update-the-mdk-app-with-new-metadata)      | Update the MDK app with new metadata  |
+| [Exercício 2.1](#exercise-21---display-customer-name-on-the-incident-list-page)      | Exibir o nome do cliente na página Lista de incidentes  |
+| [Exercício 2.2](#exercise-22---add-a-filter-feedback-bar-on-the-incident-list-page)      | Adicionar uma barra de feedback de filtro na página Lista de incidentes  |
+| [Exercício 2.3](#exercise-23---replace-the-existing-object-header-with-profile-header-ui-control)      | Substitua o cabeçalho do objeto existente pelo controle da UI do cabeçalho do perfil  |
+| [Exercício 2.4](#exercise-24---redeploy-the-application)      | Reimplantar o aplicativo  |
+| [Exercício 2.5](#exercise-25---update-the-mdk-app-with-new-metadata)      | Atualize o aplicativo MDK com novos metadados  |
 
-### Exercise 2.1 - Display Customer Name on the Incident List page
+### Exercício 2.1 - Exibir o nome do cliente na página Lista de incidentes
 
-As a technician, you may want to see who reported an incident without navigating to the detail page. You may also want to filter the incident list based on status (like new or in process) and urgency (like high).
+Como técnico, você pode querer ver quem relatou um incidente sem navegar até a página de detalhes. Você também pode filtrar a lista de incidentes com base no status (como novo ou em processo) e na urgência (como alta).
 
-1. The Incident entity has a `customer` navigation property defined in the OData service definition that allows accessing customer information. 
+1. A entidade Incidente possui uma propriedade de navegação `customer` definida na definição do serviço OData que permite acessar informações do cliente. 
 
-    To find the service definition, navigate to `Services` &rarr; `.IncidentManagement.xml` in your MDK metadata project. You will use this `customer` navigation property to access a customer's details.
+    Para encontrar a definição de serviço, navegue até `Services` &rarr; `.IncidentManagement.xml` em seu projeto de metadados MDK. Você usará esta propriedade de navegação `customer` para acessar os detalhes de um cliente.
    
     ![MDK](images/2.1.1.png)
 
