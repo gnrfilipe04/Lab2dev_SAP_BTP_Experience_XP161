@@ -71,9 +71,9 @@ Uma barra de feedback do filtro é uma barra horizontal que aparece acima de uma
 
     ![MDK](images/2.2.4.png)    
 
-5. Add another item to the `FastFilters` and fill in the following information: 
+5. Adicione outro item ao `FastFilters` e preencha as seguintes informações: 
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `DisplayValue` | `Open Status` |
     | `FilterType` | Choose `Filter` from the dropdown |    
@@ -81,15 +81,15 @@ Uma barra de feedback do filtro é uma barra horizontal que aparece acima de uma
 
     ![MDK](images/2.2.5.png)   
 
-6. Set **true** for `ShowAllFilters` property, if it's not already set.
+6. Defina **true** para a propriedade `ShowAllFilters`, se ainda não estiver definida.
 
     ![MDK](images/2.2.6.png) 
 
-### Exercise 2.3 - Replace the existing Object Header with Profile Header UI control
+### Exercício 2.3 - Substitua o cabeçalho do objeto existente pelo controle da UI do cabeçalho do perfil
 
-A Profile header UI control furnishes additional information and enhances access to various communication methods with a customer.
+Um controle de UI de cabeçalho de perfil fornece informações adicionais e aprimora o acesso a vários métodos de comunicação com um cliente.
 
-1. Navigate to `Pages` &rarr; `Incident` &rarr; `Incident_Detail.page`. Update the page's `DesignTimeTarget`'s `QueryOptions` to access  Customer information at design time. Click on the three-dot icons to open the Object Browser for the `QueryOptions` property.
+1. Navegue até `Pages` &rarr; `Incident` &rarr; `Incident_Detail.page`. Atualize as `QueryOptions` da página `DesignTimeTarget` para acessar as informações do cliente em tempo de design. Clique nos ícones de três pontos para abrir o Navegador de objetos da propriedade `QueryOptions`.
 
     ![MDK](images/2.3.1.png) 
 
