@@ -1,172 +1,172 @@
-# Exercise 3 - Modify an Incident Record
+# Exercício 3 - Modificar um Registro de Incidente
 
-## Estimated Time
+## Tempo Estimado
 
-:clock4: 40 minutes
+:clock4: 40 minutos
 
-## Objective
+## Objetivo
 
-Incidents are assigned to a Technician by a call center support representative. At the start of their day, the technician commences work on these incidents while at the customer's location.
+Os incidentes são atribuídos a um Técnico por um representante de suporte do call center. No início do dia, o técnico começa a trabalhar nesses incidentes enquanto está no local do cliente.
 
-- If the status of an incident is `New`, the technician can update it to `In Process`.
-- The technician can also update the status to `Closed` after resolving the customer's issue.
-- To close an incident, a technician must:
-    - Update the ID of the defective device either by manually entering the code or scanning the device's barcode.
-    - Upload a photograph of the working device.
-    - Acquire the digital signature of the customer confirming that the issue has been resolved.
-- If an incident's status is already `Closed`, the technician will not see any option to modify the details. They have the ability to view its details and open the working device's image.
+- Se o status de um incidente for `New`, o técnico pode atualizá-lo para `In Process`.
+- O técnico também pode atualizar o status para `Closed` depois de resolver o problema do cliente.
+- Para encerrar um incidente, um técnico deve:
+    - Atualize o ID do dispositivo com defeito inserindo manualmente o código ou digitalizando o código de barras do dispositivo.
+    - Carregue uma fotografia do dispositivo de trabalho.
+    - Adquira a assinatura digital do cliente confirmando que o problema foi resolvido.
+- Se o status de um incidente já estiver `Closed`, o técnico não verá nenhuma opção para modificar os detalhes. Eles têm a capacidade de visualizar seus detalhes e abrir a imagem do dispositivo de trabalho.
 
-| Exercise Number   | Title                                                 |
+| Número do Exercício   | Título                                                 |
 |-------------------|-------------------------------------------------------|
-| [Exercise 3.1](#exercise-31---create-a-new-page-for-modifying-incident-information)      | Create a new page for modifying Incident Information  |
-| [Exercise 3.2](#exercise-32---add-a-cancel-button-on-the-update-incident-detail-page)      | Add a Cancel Button on the Update incident Detail page|
-| [Exercise 3.3](#exercise-33---store-the-updated-data-locally)      | Store the updated data locally                        |
-| [Exercise 3.4](#exercise-34---validate-inputs-before-saving-incident-entity)      | Validate Inputs before saving Incident Entity   
-| [Exercise 3.5](#exercise-35---navigate-to-the-incident-edit-page)      | Navigate to the Incident Edit page                     |
-| [Exercise 3.6](#exercise-36---redeploy-the-application)      | Redeploy the application                               |
-| [Exercise 3.7](#exercise-37---update-the-mdk-app-with-new-metadata)      | Update the MDK app with new metadata                   |
+| [Exercício 3.1](#exercício-31---crie-uma-nova-página-para-modificar-as-informações-do-incidente)      | Crie uma nova página para modificar as Informações do Incidente  |
+| [Exercício 3.2](#exercício-32---adicione-um-botão-cancelar-na-página-atualizar-detalhes-do-incidente)      | Adicione um botão Cancelar na página Atualizar detalhes do incidente|
+| [Exercício 3.3](#exercício-33---armazene-os-dados-atualizados-localmente)      | Armazene os dados atualizados localmente                        |
+| [Exercício 3.4](#exercício-34---valide-as-entradas-antes-de-salvar-a-entidade-incidente)      | Valide as Entradas antes de salvar a Entidade Incidente   
+| [Exercício 3.5](#exercício-35---navegue-até-a-página-de-edição-de-incidentes)      | Navegue até a página Editar Incidente                     |
+| [Exercício 3.6](#exercício-36---reimplantar-o-aplicativo)      | Reimplantar o aplicativo                               |
+| [Exercício 3.7](#exercício-37---atualize-o-aplicativo-mdk-com-novos-metadados)      | Atualize o aplicativo MDK com novos metadados                   |
 
 
-### Exercise 3.1 - Create a new page for modifying Incident Information
+### Exercício 3.1 - Crie uma nova página para modificar as Informações do Incidente
 
-Both online and offline applications can be modified by users. Online application changes are saved to the backend immediately, while offline applications store the changes locally until they are synced the the backend using an Upload action.
+Os aplicativos on-line e off-line podem ser modificados pelos usuários. As alterações de aplicativos on-line são salvas no back-end imediatamente, enquanto os aplicativos off-line armazenam as alterações localmente até que sejam sincronizadas no back-end usando uma ação de upload.
 
-In this step, you'll create a Section page with a Form Cell section for the Form Cell controls. This page will display a subset of items from the Incident Detail page, specifically the fields editable by the technician.
+Nesta etapa, você criará uma página de Seção com uma seção de Célula de Formulário para os controles de Célula de Formulário. Esta página exibirá um subconjunto de itens da página Detalhes do Incidente, especificamente os campos editáveis pelo técnico.
 
-1. Navigate to **Pages** &rarr; Right-click the **Incident** folder &rarr; select **MDK: New Page**.
+1. Navegue até **Pages** &rarr; Clique com o botão direito do mouse na pasta **Incident** &rarr; selecione **MDK: New Page**.
 
     ![MDK](images/3.1.1.png)
 
-2. Choose **Section** and click **Next**.
+2. Escolha **Section** e clique em **Next**.
 
     ![MDK](images/3.1.2.png)
 
-3. In the **Base Information** step, enter the page **Name** as `Incident_Edit` and click **Finish**.
+3. Na etapa **Base Information**, insira o campo **Name** como `Incident_Edit` e clique em **Finish**.
 
     ![MDK](images/3.1.3.png)
 
-4. In the `DesignTimeTarget` section, provide the below information. This enables validation of the binding context of the current page and access to the Incident and Customer entities at design time.
+4. Na seção `DesignTimeTarget`, forneça as informações abaixo. Isso permite a validação do contexto de vinculação da página atual e o acesso às entidades Incidente e do Cliente no momento do projeto.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
-    | `Service` | Choose `IncidentManagement.service` from the dropdown |
-    | `EntitySet` | Choose `Incident` from the dropdown |    
+    | `Service` | Escolha `IncidentManagement.service` no menu suspenso |
+    | `EntitySet` | Escolha `Incident` no menu suspenso |    
     | `QueryOptions` | `$expand=customer` |    
 
     ![MDK](images/3.1.4.gif)
 
-5. In the **Properties** pane, set the **Caption** to `Update Incident Detail`.
+5. No painel **Properties**, defina a **Caption** como `Update Incident Detail`.
 
     ![MDK](images/3.1.5.png)
 
-6. Next, you'll add fields editable by a technician, including status, ID of the defective device name, device image, and customer signature. In the Layout Editor, expand the **Static Container** group. Drag and drop **Form Cell** onto the Page area.
+6. Em seguida, você adicionará campos editáveis por um técnico, incluindo status, ID do nome do dispositivo com defeito, imagem do dispositivo e assinatura do cliente. No Editor de Layout, expanda o grupo **Static Container**. Arraste e solte o **Form Cell** na área da Página.
 
     ![MDK](images/3.1.6.gif)
 
-    >The Form Cell section is used to contain Form Cell controls on a section page.
+    >A seção Célula de Formulário é usada para conter controles de Célula de Formulário em uma página de seção.
 
-7. You will now add Form Cell controls to the Form Cell section. Expand the **Form Cell Controls** group, drag and drop a **List Picker** onto the Form Cell section in the page area.
+7. Agora você adicionará controles de Célula de Formulário à seção Célula de Formulário. Expanda o grupo **Form Cell Controls**, arraste e solte um **List Picker** na seção Célula de Formulário na área da página.
 
     ![MDK](images/3.1.7.gif)
 
-8. Provide the following information:
+8. Forneça as seguintes informações:
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name`| `FCStatus` |
     | `Caption` | `Status` |
-    | `AllowEmptySelection` | Choose `false` from the dropdown |
-    | `IsPickerDismissedOnSelection`  | Choose `true` from the dropdown |
+    | `AllowEmptySelection` | Escolha `false` no menu suspenso |
+    | `IsPickerDismissedOnSelection`  | Escolha `true` no menu suspenso |
 
     ![MDK](images/3.1.8.png)
 
-    >- `AllowEmptySelection:` This disables or enables the selection of empty value set.
-    >- `IsPickerDismissedOnSelection:` This enables automatic dismissal of the list view after an entry is selected.
+    >- `AllowEmptySelection:` Isso desativa ou ativa a seleção do conjunto de valores vazios.
+    >- `IsPickerDismissedOnSelection:` Isso permite a demissão automática da visualização da lista depois que uma entrada é selecionada.
 
-9. When a technician is updating the status of an incident, they should be presented with specific options depending on the current status of the incident.
-   - If the current status is `New` or `In Process`, the technician should see the options `In Process` and `Closed`.
-   - In **Properties** pane, for the `PickerItems` property, provide the values as `In Process` and `Closed` for `item0` and `item1` respectively. Click the `item2` and then click the trash icon to delete it.
+9. Quando um técnico está atualizando o status de um incidente, ele deve receber opções específicas, dependendo do status atual do incidente.
+   - Se o status atual for `New` ou `In Process`, o técnico deve ver as opções `In Process` e `Closed`.
+   - No painel **Properties**, para a propriedade `PickerItems`, forneça os valores como `In Process` e `Closed` para `item0` e `item1`, respectivamente. Clique no `item2` e, em seguida, clique no ícone da lixeira para excluí-lo.
 
     ![MDK](images/3.1.9.png)
 
-10. When updating an incident, the current status will be visible on the list picker.
-    - If the current status is `New`, the value will be blank. This is because it wouldn't make sense for them to update the status to `New` again; instead, they would likely choose either `In Process` or `Closed`.
-    - If the current status is `In Process`, the technician has two options:
-        - They can leave the default value as `In Process`, update the device ID, and continue working on the assigned incident.
-        - They can change the status to `Closed` and provide all the necessary information to close the incident.
-    - Click on the link icon to open the Object Browser for the **Value** property. Select **OData Objects** in the dropdown menu.  In the search field, look for status, select `Status` and double-click on it. Click **OK**.
+10. Ao atualizar um incidente, o status atual ficará visível no seletor de lista.
+    - Se o status atual for `New`, o valor ficará em branco. Isso ocorre porque não faria sentido para eles atualizarem o status para `New` novamente; em vez disso, eles provavelmente escolheriam `In Process` ou `Closed`.
+    - Se o status atual for `In Progress`, o técnico tem duas opções:
+        - Eles podem deixar o valor padrão como `In Progress`, atualizar o ID do dispositivo e continuar trabalhando no incidente atribuído.
+        - Eles podem alterar o status para `Closed` e fornecer todas as informações necessárias para fechar o incidente.
+    - Clique no ícone do link para abrir o Navegador de Objetos para a propriedade **Value**. Selecione **OData Objects** no menu suspenso. No campo de pesquisa, procure o status, selecione `Status` e clique duas vezes nele. Clique em **OK**.
 
     ![MDK](images/3.1.10.gif)
 
 
-11. Below the list picker control on the Form Cell section of the `Incident_Edit.page` area, drag and drop a **Simple Property** Form cell control. This allows a technician to manually input or scan the ID of the defective device.
+11. Abaixo do controle do seletor de lista na seção Célula de Formulário da área `Incident_Edit.page`, arraste e solte um controle de célula de formulário **Simple Property**. Isso permite que um técnico insira ou digitalize manualmente o ID do dispositivo defeituoso.
 
     ![MDK](images/3.1.13.gif)
 
-12. Provide the following information:
+12. Forneça as seguintes informações:
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name`| `FCDeviceID` |
     | `Caption` | `Device ID` |
-    | `AlternateInput` | Choose `Barcode` from the dropdown |
-     `Value` | Click on the link icon to open the Object Browser and bind it to the `Device ID` |
+    | `AlternateInput` | Escolha `Barcode` no menu suspenso |
+     `Value` | Clique no ícone do link para abrir o Navegador de Objetos e vinculá-lo ao `Device ID` |
     | `PlaceHolder`  | `Type in the device's ID or scan its barcode` |
 
     ![MDK](images/3.1.14.png)
 
-13. Below the simple property control on the Form Cell section of the `Incident_Edit.page` area, drag and drop an **Attachment** Form Cell control. This allows a technician to upload an image of the device they have repaired.  
+13. Abaixo do controle de propriedade simples na seção Célula de Formulário da área `Incident_Edit.page`, arraste e solte um controle de Célula de Formulário **Attachment**. Isso permite que um técnico faça o upload de uma imagem do dispositivo que consertou.
 
     ![MDK](images/3.1.15.gif)
 
 14. Provide the following information:          
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name` | `FCDeviceImage` |
     | `IsVisible` | `false` |
-    | `AttachmentActionType` | Unselect `SelectFile` option |
+    | `AttachmentActionType` | Desmarque a opção `SelectFile` |
     | `AttachmentAddTitle` | `Add` |
     | `AttachmentTitle` | `Device Image` | 
 
     ![MDK](images/3.1.16.png)
 
-15. Below the attachment control on the Form Cell section of the `Incident_Edit.page` area, drag and drop an **Inline Signature Capture** Form Cell control. This enables a technician to collect a digital signature from the customer to confirm that the issue has been resolved.
+15. Abaixo do controle de anexo na seção Célula de Formulário da área `Incident_Edit.page`, arraste e solte um controle de Célula de Formulário **Inline Signature Capture**. Isso permite que um técnico colete uma assinatura digital do cliente para confirmar que o problema foi resolvido.
 
     ![MDK](images/3.1.17.gif)
 
-16. Provide the following information:          
+16. Forneça as seguintes informações:
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name` | `FCCustomerSignature` |
     | `Caption` | `Customer Signature` |
-    | `ShowTimestampInImage` | Choose `true` option from the dropdown |
+    | `ShowTimestampInImage` | Escolha `true` no menu suspenso |
     | `TimestampFormatter` | `YYYY-MM-dd 'at' HH:mm:ss` |
     | `WatermarkText` | `Signed by {customer/FirstName} {customer/LastName}` | 
     | `IsVisible` | `false` |
 
     ![MDK](images/3.1.18.png)
 
-    >- `ShowTimestampInImage:` The datetime will be displayed in the captured signature image.
-    >- `TimestampFormatter:` Set a DateTime format pattern string for the timestamp on the captured signature image.
-    >- `WatermarkText:` The watermark text will be displayed in the captured signature image.
+    >- `ShowTimestampInImage:` A data e hora será exibida na imagem de assinatura capturada.
+    >- `TimestampFormatter:` Defina uma string padrão de formato DateTime para o carimbo de data/hora na imagem de assinatura capturada.
+    >- `WatermarkText:` O texto da marca d'água será exibido na imagem de assinatura capturada.
 
-17. If the `In Process` option is chosen from the Status list picker during an Incident modification, the options for uploading a Device Image and capturing customer signature should be hidden. However, if the `Closed` status is selected, the technician should be provided with options to upload an image of the device and collect the customer's signature. This logic needs to be added to the `Incident_Edit.page` in the application.
+17. Se a opção `In Process` for escolhida no seletor de lista de Status durante uma modificação de Incidente, as opções para fazer upload de uma Imagem do Dispositivo e capturar a assinatura do cliente devem estar ocultas. No entanto, se o status `Closed` for selecionado, o técnico deve receber opções para fazer upload de uma imagem do dispositivo e coletar a assinatura do cliente. Essa lógica precisa ser adicionada ao `Incident_Edit.page` no aplicativo.
 
-    Select `Status` List picker control, navigate to the **Event** tab, Click on **Create a rule/action** for `OnValueChange` event.
+    Selecione o controle do selecionador de lista `Status`, navegue até a guia **Event**, clique em **Create a rule/action** para o evento `OnValueChange`.
 
     ![MDK](images/3.1.20.png)
 
-18. Next, select **Object Type** as **Rule** and **Folders** as `/MDKApp/Rules/Incident`. Click **OK**. This keeps all related files organized together.
+18. Em seguida, selecione **Object Type** como **Rule** e **Folders** como `/MDKApp/Rules/Incident`. Clique em **OK**. Isso mantém todos os arquivos relacionados organizados juntos.
 
     ![MDK](images/3.1.10.png)
 
-19. Provide the name `StatusChangeProtocol` to your rule, click **Finish**.
+19. Forneça o nome `StatusChangeProtocol` à sua regra, clique em **Finish**.
 
     ![MDK](images/3.1.21.png)
 
-20. Replace the generated snippet with the following code.
+20. Substitua o snippet gerado pelo seguinte código.
 
     ```JavaScript
     /**
@@ -192,223 +192,223 @@ In this step, you'll create a Section page with a Form Cell section for the Form
     }
     ```
 
-### Exercise 3.2 - Add a Cancel Button on the Update incident Detail page
+### Exercício 3.2 - Adicione um Botão Cancelar na página Atualizar detalhes do incidente
 
-While updating the incident details, you want to give the user an option to close the edit page and not save any values entered.
+Ao atualizar os detalhes do incidente, você deseja dar ao usuário a opção de fechar a página de edição e não salvar nenhum valor inserido.
 
-1. In the `Incident_Edit.page`, drag and drop an **Action Bar Item** control to the upper left corner of the action bar.
+1. No `Incident_Edit.page`, arraste e solte um controle **Action Bar Item** no canto superior esquerdo da barra de ação.
 
     ![MDK](images/3.2.1.png)
 
-    >The Action Bar Item is a button that users can use to trigger actions when pressed. You can add an Action Bar Item only to the Action Bar at the top of the page.
+    >O Action Bar Item é um botão que os usuários podem usar para acionar ações quando pressionados. Você pode adicionar um Item da Barra de Ação apenas à Barra de Ação na parte superior da página.
 
-2. In the Properties pane, provide the following information:        
+2. No painel Propriedades, forneça as seguintes informações:
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Caption` | `Cancel` |
-    | `SystemItem` | Click the **link icon** to open the Object Browser, double-click the **Cancel** type and click **OK**. |
+    | `SystemItem` | Clique no **link icon** para abrir o Navegador de Objetos, clique duas vezes no tipo **Cancel** e clique em **OK**. |
 
     ![MDK](images/3.2.2.png)
 
-    >System Items are predefined system-supplied icons.
+    >System Items são ícones predefinidos fornecidos pelo sistema.
 
-3. Navigate to the **Events** tab. Click the three-dot icon, then click the **Object Browser** and bind it to `CloseModalPage_Cancel.action`. This action will close the current page and terminate any ongoing events.
+3. Navegue até a guia **Events**. Clique no ícone de três pontos, depois clique no **Object Browser** e vincule-o a `CloseModalPage_Cancel.action`. Esta ação fechará a página atual e encerrará quaisquer eventos em andamento.
 
     ![MDK](images/3.2.3.png)
 
 
-### Exercise 3.3 - Store the updated data locally
+### Exercício 3.3 - Armazene os dados atualizados localmente
 
-While a Technician is updating incident information, such as Status, Device ID, Device Image, and Customer Signature, these details will be communicated to the backend through relevant OData calls based on entity type and their respective OData property types.
+Enquanto um Técnico está atualizando informações de incidentes, como Status, ID do Dispositivo, Imagem do Dispositivo e Assinatura do Cliente, esses detalhes serão comunicados ao back-end por meio de chamadas OData relevantes com base no tipo de entidade e em seus respectivos tipos de propriedade OData.
 
-You can find details of the service definition in your MDK metadata project `/Services/.IncidentManagement.xml`.
+Você pode encontrar detalhes da definição do serviço em seu projeto de metadados MDK `/Services/. IncidentManagement.xml`.
     
 ![MDK](images/3.3.1.png)
 
-To update the `Status` and `DeviceID` properties of the Incident entity, the OData Update Entity action is used. <br/> However, when dealing with the `DeviceImage` and `ResolutionSignatureImage` properties of the Incident entity, which are of type Edm.Stream, the OData UploadStream action is used. Stream properties are used to store binary data, such as images or files. 
+Para atualizar as propriedades `Status` e `DeviceID` da entidade Incidente, a ação OData Update Entity é usada. <br/> No entanto, ao lidar com as propriedades `DeviceImage` e `ResolutionSignatureImage` da entidade Incidente, que são do tipo Edm.Stream, a ação OData UploadStream é usada. As propriedades do fluxo são usadas para armazenar dados binários, como imagens ou arquivos.
 
-- You will now add an Action Bar item on the `Incident_Edit.page`. This item will trigger an OData Update Entity action to save the Status and Device ID.
-- Following the successful completion of the OData Update Entity action, you will initiate an OData Upload Stream action to save the Device Image and Customer Signature.
-- Once the update actions are executed successfully, close the Edit page.
-- A failure message should be displayed if either action fails to execute the changes.
+- Agora você adicionará um item da Barra de Ação no `Incident_Edit.page`. Este item acionará uma ação da Entidade de Atualização OData para salvar o Status e o ID do Dispositivo.
+- Após a conclusão bem-sucedida da ação OData Update Entity, você iniciará uma ação OData Upload Stream para salvar a Imagem do Dispositivo e a Assinatura do Cliente.
+- Depois que as ações de atualização forem executadas com sucesso, feche a página Editar.
+- Uma mensagem de falha deve ser exibida se qualquer uma das ações não conseguir executar as alterações.
 
-1. In the `Incident_Edit.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
+1. No `Incident_Edit.page`, **drag and drop** um **Action Bar Item** no canto superior direito da barra de ação.
 
     ![MDK](images/3.3.2.png)
 
-2. In the Properties pane, provide the following information:        
+2. No painel Propriedades, forneça as seguintes informações:        
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Caption` | `Save` |
-    | `SystemItem` | Click the **link icon** to open the Object Browser, double-click the **Save** type and click **OK**. |
+    | `SystemItem` | Clique no **link icon** para abrir o Navegador de Objetos, clique duas vezes no tipo **Save** e clique em **OK**. |
 
     ![MDK](images/3.3.3.png)
 
-3. Navigate to the **Events** tab. Click the three-dot icon for the `OnPress` property and select the `Create a rule/action`.
+3. Navegue até a guia **Events**. Clique no ícone de três pontos para a propriedade `OnPress` e selecione `Create a rule/action`.
 
     ![MDK](images/3.3.4.png)
 
-4. Set the selection for the `Object Type` as **Action** and `Folders` path as `/MDKApp/Actions/Incident`. This keeps all related files organized together.
+4. Defina a seleção para o caminho `Object Type` como **Action** e `Folders` como `/MDKApp/Actions/Incident`. Isso mantém todos os arquivos relacionados organizados juntos.
 
     ![MDK](images/3.3.5.png)   
 
-5. In the search **Category** dropdown, choose **Data** | click **OData** | click **Next**.
+5. No menu suspenso de pesquisa **Category**, escolha **Data** | clique em **OData** | clique em **Next**.
 
     ![MDK](images/3.3.6.png)   
 
-6. In the **Base Information** step, provide the following information and click **Next**.
+6. Na etapa **Base Information**, forneça as seguintes informações e clique em **Next**.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name`| `Incident_UpdateEntity` |
-    | `Type` | Select `UpdateEntity` from the dropdown |
-    | `Service`| Select `IncidentManagement.service` from the dropdown |
-    | `EntitySet`| Select `Incident` from the dropdown |
-    | `ReadLink`| Click link icon to open the Object Browser and double-click `readLink` |
+    | `Type` | Selecione `UpdateEntity` no menu suspenso |
+    | `Service`| Selecione `IncidentManagement.service` no menu suspenso |
+    | `EntitySet`| Selecione `Incident` no menu suspenso |
+    | `ReadLink`| Clique no ícone do link para abrir o Navegador de Objetos e clique duas vezes em `readLink` |
 
     ![MDK](images/3.3.7.png)  
 
-    >The `readLink` is a direct reference to an individual entity set entry.
+    >O `readLink` é uma referência direta a uma entrada de conjunto de entidades individuais.
 
-7.  In **Property and Update Links** step, uncheck **ID**.
+7.  Na etapa **Property and Update Links**, desmarque **ID**.
 
-8.  You will bind `Status` and `DeviceID` OData properties to respective UI Controls. 
-    - Select the `Status` property and click the **link icon** to open the Object Browser. 
-    - In the Object Browser, change the dropdown  to `Control & ClientData`, and select the  **Current Page** radio button.
-    - In the search box, start typing `status`. The list will filter to display the matching values. Double-click the **SelectedValue (Value)** entry under the `FCStatus` field and click **OK** to set binding.
+8.  Você vinculará as propriedades `Status` e `DeviceID` OData aos respectivos Controles da Interface do Usuário.
+    - Selecione a propriedade `Status` e clique no **link icon** para abrir o Navegador de Objetos.
+    - No Navegador de Objetos, altere o menu suspenso para `Control & ClientData` e selecione o botão de opção **Current Page**.
+    - Na caixa de pesquisa, comece a digitar `status`. A lista será filtrada para exibir os valores correspondentes. Clique duas vezes na entrada **SelectedValue (Value)** no campo `FCStatus` e clique em **OK** para definir a vinculação.
 
     ![MDK](images/3.3.8.gif)  
 
-    >`SelectedValue` provides the return value of List Picker selection.
+    >`SelectedValue` fornece o valor de retorno da seleção List Picker.
 
-9. Repeat the above step for DeviceID.
-    - Select the `DeviceID` property and click the **link icon** to open the Object Browser. 
-    - Change the drop-down in the Object Browser to `Control & ClientData`, click the **Current Page** radio button.
-    - In the search box, start typing `device`. The list will filter down to show the matching values. Double-click the **Value (Value)** entry under the `FCDeviceID` field and click **OK** to set binding.
+9. Repita a etapa acima para DeviceID.
+    - Selecione a propriedade `DeviceID` e clique no **link icon** para abrir o Navegador de Objetos. 
+    - Altere o menu suspenso no Navegador de Objetos para `Control & ClientData`, clique no botão de opção **Current Page**.
+    - Na caixa de pesquisa, comece a digitar `device`. A lista será filtrada para baixo para mostrar os valores correspondentes. Clique duas vezes na entrada **Value (Value)** no campo `FCDeviceID` e clique em **OK** para definir a vinculação.
 
     ![MDK](images/3.3.9.gif) 
 
-10. Click Finish. The action editor will open with the `Incident_UpdateEntity.action` loaded.
+10. Clique em Concluir. O editor de ação será aberto com o `Incident_UpdateEntity.action` carregado.
 
-11. When this `Incident_UpdateEntity.action` fails due to some reason, you may want to display an error. In the `Incident_UpdateEntity.action`, scroll down and expand the **Common Action Properties** section. Click on the link icon for `Failure Action` property to open the Object Browser and bind to an existing message action `GenericMessageBox.action`.
+11. Quando este `Incident_UpdateEntity.action` falha devido a algum motivo, você pode querer exibir um erro. No `Incident_UpdateEntity.action`, role para baixo e expanda a seção **Common Action Properties**. Clique no ícone do link para a propriedade `Failure Action` para abrir o Navegador de Objetos e vincular a uma ação de mensagem existente `GenericMessageBox.action`.
 
     ![MDK](images/3.3.10.png) 
 
-12. Let's override this action's properties and define some specific information about `Incident_UpdateEntity.action`. Click on the override icon to open the override action properties wizard. 
+12. Vamos substituir as propriedades desta ação e definir algumas informações específicas sobre `Incident_UpdateEntity.action`. Clique no ícone de substituição para abrir o assistente de propriedades de ação de substituição.
 
     ![MDK](images/3.3.11.png) 
 
-13. Provide the following information and then click **OK**.
+13. Forneça as seguintes informações e clique em **OK**.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Message` | `Update entity failure - {#ActionResults:Incident_UpdateEntity/error}` |
     | `Title` | `Update Incident` |
 
     ![MDK](images/3.3.12.png) 
 
-    >`Incident_UpdateEntity` is the Action Result value of the Incident_UpdateEntity.action. This reference is used to pass the results to subsequent actions in the chain. These actions can reference the action result as needed. In this case if there is a failure, you access the error property of the action result to display the OData failure message. <br/> This is the standard Binding Target Path (also called Dynamic Target Path) syntax used when you need to include a binding with other bindings or within a string as used in the message here.<br/> You could exclude above expression and can just display a generic message.
+    >`Incident_UpdateEntity` é o valor do Resultado da Ação do Incident_UpdateEntity.action. Esta referência é usada para passar os resultados para ações subsequentes na cadeia. Essas ações podem fazer referência ao resultado da ação, conforme necessário. Neste caso, se houver uma falha, você acessa a propriedade de erro do resultado da ação para exibir a mensagem de falha OData. <br/> Esta é a sintaxe padrão do Caminho de Destino de Vinculação (também chamada de Caminho de Destino Dinâmico) usada quando você precisa incluir uma vinculação com outras ligações ou dentro de uma string como usada na mensagem aqui. <br/> Você pode excluir a expressão acima e pode apenas exibir uma mensagem genérica.
 
-14. Upon successful completion of the `Incident_UpdateEntity.action`, an OData Upload Stream action should be initiated to save the Device Image and Customer Signature. <br/> Click the `Create a rule/action` icon for the **Success Action**. 
+14. Após a conclusão bem-sucedida do `Incident_UpdateEntity.action`, uma ação do OData Upload Stream deve ser iniciada para salvar a Imagem do Dispositivo e a Assinatura do Cliente. <br/> Clique no ícone `Create a rule/action` para a **Success Action**.
 
     ![MDK](images/3.3.13.png) 
 
-15. Select **Object Type** as **Action** and `Folders` as `/MDKApp/Actions/Incident`. Click **OK**.
+15. Selecione **Object Type** como **Action** e `Folders` como `/MDKApp/Actions/Incident`. Clique em **OK**.
 
     ![MDK](images/3.3.5.png)   
 
-16. In the search **Category** dropdown, choose **Data** | click **Media** | click **Next**. 
+16. No menu suspenso de pesquisa **Category**, escolha **Data** | clique em **Media** | clique em **Next**.
 
     ![MDK](images/3.3.14.png)  
 
-17. In the **Base Information** step, provide the following information and click **Next**.
+17. Na etapa **Base Information**, forneça as seguintes informações e clique em **Next**.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name`| `Incident_UploadStream` |
-    | `Type` | Select `UploadStream` from the dropdown |
-    | `Service`| Select `IncidentManagement.service` from the dropdown |
-    | `EntitySet`| Select `Incident` from the dropdown |
-    | `ReadLink`| Click link icon to open the Object Browser and double-click `readLink` |
+    | `Type` | Selecionar `UploadStream` no menu suspenso |
+    | `Service`| Selecionar `IncidentManagement.service` no menu suspenso |
+    | `EntitySet`| Selecionar `Incident` no menu suspenso |
+    | `ReadLink`| Clique no ícone do link para abrir o Navegador de Objetos e clique duas vezes em `readLink` |
 
     ![MDK](images/3.3.15.png) 
 
-18.  In **Property and Update Links** step, select the `DeviceImage` property and click the **link icon** to open the object browser.
-    -  Change the drop-down in the Object Browser to `Control & ClientData`, select the **Current Page** radio button.
-    - In the search box, start typing `image`. The list will filter to display the matching values. Double-click the **Value (Value)** entry under the `FCDeviceImage` field and click **OK** to set binding.
+18.  Na etapa **Property and Update Links**, selecione a propriedade `DeviceImage` e clique no **link icon** para abrir o navegador de objetos.
+    -  Altere o menu suspenso no Navegador de Objetos para `Control & ClientData`, selecione o botão de opção **Current Page**.
+    - Na caixa de pesquisa, comece a digitar `image`. A lista será filtrada para exibir os valores correspondentes. Clique duas vezes na entrada **Value (Value)** no campo `FCDeviceImage` e clique em **OK** para definir a vinculação.
 
         ![MDK](images/3.3.16.gif) 
 
-19. Select the `ResolutionSignatureImage` property and click the **link icon** to open the object browser.
-    -  Change the drop-down in the Object Browser to `Control & ClientData`, select the **Current Page** radio button.
-    - In the search box, start typing `signature`. The list will filter to display the matching values. Double-click the **Value (Value)** entry under the `FCCustomerSignature` field and click **OK** to set binding.
+19. Selecione a propriedade `ResolutionSignatureImage` e clique no **link icon** para abrir o navegador de objetos.
+    -  Altere o menu suspenso no Navegador de Objetos para `Control & ClientData`, selecione o botão de opção **Current Page**.
+    - Na caixa de pesquisa, comece a digitar `signature`. A lista será filtrada para exibir os valores correspondentes. Clique duas vezes na entrada **Value (Value)** no campo `FCCustomerSignature` e clique em **OK** para definir a vinculação.
     
         ![MDK](images/3.3.17.png) 
 
-20. Click Finish. The action editor will open with the `Incident_UploadStream.action` loaded.
+20. Clique em Concluir. O editor de ação será aberto com o `Incident_UploadStream.action` carregado.
 
-21. When the `Incident_UploadStream.action` is executed, you may want to display sucess message and close the page. When it fails due to some reason, you may want to display an error. <br/> In the `Incident_UploadStream.action`, scroll down and expand the **Common Action Properties** section. Click on the link icon for `Success Action` property to open the Object Browser and bind to an existing message action `GenericToastMessage.action`.
+21. Quando o `Incident_UploadStream.action` for executado, você pode querer exibir uma mensagem de sucesso e fechar a página. Quando falhar por algum motivo, você pode querer exibir um erro. <br/> No `Incident_UploadStream.action`, role para baixo e expanda a seção **Common Action Properties**. Clique no ícone de link para a propriedade `Success Action` para abrir o Navegador de Objetos e vincular a uma ação de mensagem existente `GenericToastMessage.action`.
 
     ![MDK](images/3.3.18.png) 
 
-22. Let's override this action's properties and define some specific information about handling `Incident_UploadStream.action`. Click on the override icon to open the override action properties wizard. 
+22. Vamos substituir as propriedades desta ação e definir algumas informações específicas sobre o manuseio de `Incident_UploadStream.action`. Clique no ícone de substituição para abrir o assistente de propriedades de ação de substituição. 
 
     ![MDK](images/3.3.19.png) 
 
-23. Provide the following information and then click **OK**.
+23. Forneça as seguintes informações e clique em **OK**.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Message` | `Entity updated` |
     | `Duration` | `2` |
-    | `Animated` | Select `true` from the dropdown option |
-    | `Common Action Properties` &rarr; `Success Action` | Click on the link icon and bind it to `CloseModalPage_Complete.action` |
+    | `Animated` | Selecione `true` na opção suspensa |
+    | `Common Action Properties` &rarr; `Success Action` | Clique no ícone do link e vincule-o a `CloseModalPage_Complete.action` |
 
     ![MDK](images/3.3.20.png) 
 
-24. When this `Incident_UploadStream.action` fails due to some reason, you may want to display an error. Click on the link icon for `Failure Action` property to open the Object Browser and bind to an existing message action `GenericMessageBox.action`.
+24. Quando este `Incident_UploadStream.action` falha devido a algum motivo, você pode querer exibir um erro. Clique no ícone do link para a propriedade `Failure Action` para abrir o Navegador de Objetos e vincular a uma ação de mensagem existente `GenericMessageBox.action`.
 
     ![MDK](images/3.3.21.png) 
 
-25. Let's override this action's properties and define some specific information when `Incident_UploadStream.action` fails. Click on the override icon to open the override action properties wizard. 
+25. Vamos substituir as propriedades desta ação e definir algumas informações específicas quando `Incident_UploadStream.action` falha. Clique no ícone de substituição para abrir o assistente de propriedades de ação de substituição. 
 
     ![MDK](images/3.3.22.png) 
 
-26. Provide the following information and then click **OK**.
+26. Forneça as seguintes informações e clique em **OK**.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Message` | `Upload Stream failure - {#ActionResults:Incident_UploadStream/error}` |
     | `Title` | `Upload Stream` |
 
     ![MDK](images/3.3.23.png) 
 
-### Exercise 3.4 - Validate Inputs before saving Incident Entity
+### Exercício 3.4 - Valide as Entradas antes de salvar a Entidade Incidente
 
-Ensure the technician can only save an incident entity after providing all the required inputs. If they don't, show them an appropriate message. For instance, if they try to submit a record with an empty status, no Device ID, more than one device image, or without a customer signature, they should be prompted with a warning message.
+Certifique-se de que o técnico só possa salvar uma entidade incidente depois de fornecer todas as entradas necessárias. Se não o fizerem, mostre a eles uma mensagem apropriada. Por exemplo, se eles tentarem enviar um registro com um status vazio, sem ID de dispositivo, mais de uma imagem de dispositivo ou sem uma assinatura do cliente, eles devem ser solicitados com uma mensagem de aviso.
 
-To achieve this, you'll need to implement business logic that validates the input values and this logic needs to be bound to the `Save` ActionBar item on the `Incident_Edit.page`.
+Para conseguir isso, você precisará implementar uma lógica de negócios que valide os valores de entrada e essa lógica precisa ser vinculada ao item `Save` ActionBar no `Incident_Edit.page`.
 
-1. In `Incident_Edit.page`, select the `Save` ActionBar item and navigate to the **Events** tab. Clear the existing binding for the `OnPress` property.
+1. Em `Incident_Edit.page`, selecione o item `Save` ActionBar e navegue até a guia **Events**. Limpe a vinculação existente para a propriedade `OnPress`.
 
     ![MDK](images/3.4.8.png) 
 
-2. Click the three-dot icon for the `OnPress` property, and select `Create a rule/action`.
+2. Clique no ícone de três pontos para a propriedade `OnPress` e selecione `Create a rule/action`.
 
     ![MDK](images/3.4.9.png) 
 
-3. Select **Object Type** as **Rule** and **Folders** as `/MDKApp/Rules/Incident`. Click **OK**.  
+3. Selecione **Object Type** como **Rule** e **Folders** como `/MDKApp/Rules/Incident`. Clique em **OK**.
 
     ![MDK](images/3.1.10.png)
 
 
-5. Provide the name `Incident_ValidateEdit` to your rule, and then click **Finish**.
+5. Forneça o nome `Incident_ValidateEdit` à sua regra e clique em **Finish**.
 
     ![MDK](images/3.4.10.png)  
 
-6. Replace the generated snippet with the following code.
+6. Substitua o snippet gerado pelo seguinte código.
 
     ```JavaScript
     /**
@@ -469,36 +469,36 @@ To achieve this, you'll need to implement business logic that validates the inpu
     }
     ```
 
-### Exercise 3.5 - Navigate to the Incident Edit page
+### Exercício 3.5 - Navegue até a página de Edição de Incidentes
 
-To navigate from the Incident Detail page to a new page for modifying incident information, you'll add an action bar item on the Incident Details page and link it to a navigation action. When the action bar item is pressed by a technician, it will open the `Incident_Edit.page`.
+Para navegar da página Incident Detail para uma nova página para modificar informações do incidente, você adicionará um item da barra de ação na página Incident Detail e o vinculará a uma ação de navegação. Quando o item da barra de ação é pressionado por um técnico, ele abrirá o `Incident_Edit.page`.
 
-1. In `Incident_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar, placing it before the existing `View Image` item.
+1. Em `Incident_Detail.page`, arraste e solte um **Action Bar Item** para o canto superior direito da barra de ação, colocando-o antes do item `View Image` existente.
 
     ![MDK](images/3.4.1.png)    
 
-2. In the Properties pane, provide the following information:        
+2. No painel Propriedades, forneça as seguintes informações:     
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Caption` | `Edit` |
-    | `SystemItem` | Click the **link icon** to open the Object Browser, double-click the **Edit** type and click **OK**. |
+    | `SystemItem` | Clique no **link icon** para abrir o Navegador de Objetos, clique duas vezes no tipo **Edit** e clique em **OK**. |
 
     ![MDK](images/3.4.2.png)    
 
-3. The Edit button should only be visible for incidents that are in the `New` or `In Process` state. If an incident's status is `Closed`, the technician should not have any options to change the details. This behavior should be integrated into your application logic. <br/>  Click on `Create a rule` icon for the **Visible** property of Edit action bar item.
+3. O botão Editar só deve ser visível para incidentes que estejam no estado `New` ou `In Process`. Se o status de um incidente for `Closed`, o técnico não deve ter nenhuma opção para alterar os detalhes. Esse comportamento deve ser integrado à lógica do seu aplicativo. <br/> Clique no ícone `Create a rule` para a propriedade **Visible** do item Editar barra de ação.
 
     ![MDK](images/3.4.3.png)   
 
-4. Select **Object Type** as **Rule** and **Folders** as `/MDKApp/Rules/Incident`. Click **OK**.  
+4. Selecione **Object Type** como **Rule** e **Folders** como `/MDKApp/Rules/Incident`. Clique em **OK**.
 
     ![MDK](images/3.1.10.png)
 
-5. Provide the name `EditOptionVisibility` to your rule, and then click **Finish**.
+5. Forneça o nome `EditOptionVisibility` à sua regra e clique em **Finish**.
 
     ![MDK](images/3.4.4.png)  
 
-6. Replace the generated snippet with the following code.
+6. Substitua o snippet gerado pelo seguinte código.
 
     ```JavaScript
     /**
@@ -516,65 +516,65 @@ To navigate from the Incident Detail page to a new page for modifying incident i
     }
     ```
 
-7. Switch back to the `Incident_Detail.page`.
+7. Volte para o `Incident_Detail.page`.
 
-8. Navigate to the **Events** tab. Click the three-dot icon for the `OnPress` property, and select `Create a rule/action`.
+8. Navegue até a guia **Events**. Clique no ícone de três pontos para a propriedade `OnPress` e selecione `Create a rule/action`.
 
     ![MDK](images/3.4.5.png)     
 
-9. Set the selection for the `Object Type` as **Action** and choose the `Folders` path as `/MDKApp/Actions/Incident`.
+9. Defina a seleção para o `Object Type` como **Action** e escolha o caminho `Folders` como `/MDKApp/Actions/Incident`.
 
     ![MDK](images/3.3.5.png)   
 
-10. In the search **Category** dropdown, choose **UI** | click **Navigation** | click **Next**. 
+10. No menu suspenso de pesquisa **Category**, escolha **UI** | clique em **Navigation** | clique em **Next**. 
 
     ![MDK](images/3.4.6.png)  
 
-11. Provide the following information and click **Finish** to complete the action creation process.
+11. Forneça as seguintes informações e clique em **Finish** para concluir o processo de criação da ação.
 
-    | Property | Value |
+    | Propriedade | Valor |
     |----|----|
     | `Name`| `NavToIncident_Edit` |
-    | `PageToOpen` | Select `Incident_Edit.page` from the dropdown |
-    | `ModalPage`| Select `true` from the dropdown |
-    | `ModalPageFullScreen`| Select `false` from the dropdown |
+    | `PageToOpen` | Selecione `Incident_Edit.page` no menu suspenso |
+    | `ModalPage`| Selecione `true` no menu suspenso |
+    | `ModalPageFullScreen`| Selecione `false` no menu suspenso |
 
     ![MDK](images/3.4.7.png)  
 
-    >- `ModalPage:` This indicates if a page is modal.
-    >- `ModalPageFullScreen:` On a phone form factor the modal page will display as a full page modal screen. On a tablet form factor the partial modal will popup and not cover the entire page when setting its value to false
+    >- `ModalPage:` Isso indica se uma página é modal.
+    >- `ModalPageFullScreen:` Em um formato de telefone, a página modal será exibida como uma tela modal de página inteira. Em um fator de forma de tablet, o modal parcial será pop-up e não cobrirá a página inteira ao definir seu valor como falso.
 
-### Exercise 3.6 - Redeploy the application
+### Exercício 3.6 - Reimplantar o aplicativo
 
-Now that you have created the Edit page it is time to deploy the changes to see the result.
+Agora que você criou a página Editar, é hora de implantar as alterações para ver o resultado.
 
-1. Right-click the `Application.app` file in the project explorer pane, choose `MDK:Deploy` and then select deploy target as **Mobile Services**. When the deployment is successful, a success message will appear. If the deployment gets stuck, reload the page and try again.
+1. Clique com o botão direito do mouse no arquivo `Application.app` no painel do explorador do projeto, escolha `MDK:Deploy` e selecione o destino de implantação como **Mobile Services**. Quando a implantação for bem-sucedida, uma mensagem de sucesso aparecerá. Se a implantação ficar presa, recarregue a página e tente novamente.
 
     ![MDK](images/3.5.1.png)
     ![MDK](images/3.5.2.png)
 
-    >Alternatively, you can select `MDK: Redeploy` from the command palette. To access the command palette, go to the View menu and choose Command Palette, or press Command+Shift+P on a Mac or Ctrl+Shift+P on a Windows machine. This command will perform the last deployment.
+    >Alternativamente, você pode selecionar `MDK: Redeploy` na paleta de comandos. Para acessar a paleta de comandos, vá para o menu Exibir e escolha Paleta de Comandos, ou pressione Command+Shift+P em um Mac ou Ctrl+Shift+P em uma máquina Windows. Este comando executará a última implantação.
     
     >![MDK](images/3.5.3.png)
 
        
 
-### Exercise 3.7 - Update the MDK app with new metadata
+### Exercício 3.7 - Atualize o aplicativo MDK com novos metadados
 
 | Steps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Android | iOS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |---|---|---|
-| 1. Tap the **Check for Updates** option in the `User menu` on the Incident page.| ![MDK](images/3.6.1.png)| ![MDK](images/3.6.2.png)|
-| 2. You will see a `New Version Available!` pop-up. Tap **Now**.| ![MDK](images/3.6.3.png)| ![MDK](images/3.6.4.png)|
-| 3. Navigate to an Incident detail page. <br/><br/> If an incident's status is already `Closed`, you will not see the **Edit** option in the action bar. Instead, you will have the ability to open the working device's image. <br/><br/>  If an incident's status is `New` or `In Process`, you will see the **Edit** option.| ![MDK](images/3.6.5.gif)| ![MDK](images/3.6.6.gif)|
-| 4. Update an Incident. <br/><br/> you can update the status from `New` to `In Process` or `Closed` or from `In Process` to `Closed`. <br/><br/> When updating it to `In Process`, you should be able to enter the ID of the defective device, either by manually typing it or scanning the device's barcode, but you won't have options for uploading a device image or capturing the customer's signature. <br/><br/> When updating it to `Closed`, you should be able to enter the ID of the defective device, either by manually typing it or scanning the device's barcode, and you should also see the options for uploading a device image and capturing customer's signature. <br/><br/> To scan the device's barcode, you can use the below image. <br/><br/><br/><br/> ![MDK](images/3.6.9.png) | ![MDK](images/3.6.7.gif)| ![MDK](images/3.6.8.gif)|
-| 5. Since this is an Offline application, the changes are saved to the local store, which needs to be sent or uploaded to the backend explicitly. <br/><br/> Navigate to the Incident list page, pull down on the incident list to upload changes to the backend, OR click on the user menu icon and select **Sync Changes**. You should see a `Sync Completed` message displayed. | ![MDK](images/3.6.10.gif) | ![MDK](images/3.6.11.gif)|
+| 1. Toque na opção **Check for Updates** no `User menu` na página de Incidentes.| ![MDK](images/3.6.1.png)| ![MDK](images/3.6.2.png)|
+| 2. Você verá uma `New Version Available!` pop-up. Toque em **Now**.| ![MDK](images/3.6.3.png)| ![MDK](images/3.6.4.png)|
+| 3. Navegue até a página Incident detail. <br/><br/> Se o status do incidente já estiver `Closed`, você não verá a opção **Edit** na barra de ação. Em vez disso, você terá a capacidade de abrir a imagem do dispositivo de trabalho. <br/><br/>  Se o status de um incidente for `New` ou `In Process`, você verá a opção **Edit**.| ![MDK](images/3.6.5.gif)| ![MDK](images/3.6.6.gif)|
+| 4. Atualize um Incidente. <br/><br/> você pode atualizar o status de `New` para `In Process` ou `Closed` ou de `In Process` para `Closed`. <br/><br/> Ao atualizá-lo para `In Process`, você poderá inserir o ID do dispositivo com defeito, digitando-o manualmente ou digitalizando o código de barras do dispositivo, mas não terá opções para fazer upload de uma imagem do dispositivo ou capturar a assinatura do cliente. <br/><br/> Ao atualizá-lo para `Closed`, você deve ser capaz de inserir o ID do dispositivo com defeito, digitando-o manualmente ou digitalizando o código de barras do dispositivo, e você também deve ver as opções para fazer upload de uma imagem do dispositivo e capturar a assinatura do cliente. <br/><br/> Para digitalizar o código de barras do dispositivo, você pode usar a imagem abaixo. <br/><br/><br/><br/> ![MDK](images/3.6.9.png) | ![MDK](images/3.6.7.gif)| ![MDK](images/3.6.8.gif)|
+| 5. Como este é um aplicativo off-line, as alterações são salvas na loja local, que precisa ser enviada ou carregada no back-end explicitamente. <br/><br/> Navegue até a página da lista de incidentes, puxe para baixo na lista de incidentes para fazer upload de alterações para o back-end, OU clique no ícone do menu do usuário e selecione **Sync Changes**. Você deve ver uma mensagem `Sync Completed` exibida. | ![MDK](images/3.6.10.gif) | ![MDK](images/3.6.11.gif)|
 
-## Summary
+## Resumo
 
-You've now successfully modified an incident entity. 
+Agora você modificou com sucesso uma entidade incidente.
 
-## Navigation
+## Navegação
 
-| Previous| Next |
+| Anterior | Próximo |
 |---|---|
 | [Exercise 2](../ex2/README.md) | [Exercise 4](../ex4/README.md) |
