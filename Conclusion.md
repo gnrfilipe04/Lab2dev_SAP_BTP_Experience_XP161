@@ -1,6 +1,6 @@
 # AD162 - Conclusão
 
-You're a :star: 
+Você é uma :star: 
 
 ![Race Finish](./assets/images/img-3.jpg)
 
