@@ -1,17 +1,17 @@
-# AD162 - Conclusion
+# AD162 - Conclusão
 
 You're a :star: 
 
 ![Race Finish](./assets/images/img-3.jpg)
 
-Congratulations on successfully completing AD162. We hope you enjoyed the session.  We are looking forward to seeing the apps you will build using your new skills.
+Parabéns por concluir com sucesso o AD162. Esperamos que você tenha gostado da sessão. Estamos ansiosos para ver os aplicativos que você criará usando suas novas habilidades.
 
-Enjoy the rest of SAP TechEd 2023.
+Aproveite o resto do SAP TechEd 2023.
 
 ![ADAI More Learning](./assets/images/img-build-code-conclusion.png)
 
-## Navigation
+## Navegação
 
-| Previous| Next |
+| Anterior| Próximo |
 |---|---|
 | [Exercise 4](./ex4/README.md) | [Back To Overview](./README.md) |
